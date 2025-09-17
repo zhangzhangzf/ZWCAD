@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56D74AB7-72C7-44DE-9D4D-E1AD4EDAE2A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZWCAD.BaseTools</RootNamespace>
+    <AssemblyName>ZWCAD.BaseTools</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;autoCAD2012</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ZWCAD.BaseTools.xml</DocumentationFile>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZwDatabaseMgd">
+      <HintPath>..\CADDLLs\ZWCAD2023\ZwDatabaseMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ZwManaged">
+      <HintPath>..\CADDLLs\ZWCAD2023\ZwManaged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArrayTool.cs" />
+    <Compile Include="AttributeTool.cs" />
+    <Compile Include="BlockTool.cs" />
+    <Compile Include="ColorTool.cs" />
+    <Compile Include="CreateFrameBlockUtil.cs" />
+    <Compile Include="CurveTool.cs" />
+    <Compile Include="DatabaseTool.cs" />
+    <Compile Include="DBPointTool.cs" />
+    <Compile Include="DBTextTool.cs" />
+    <Compile Include="ErrorMessageTool.cs" />
+    <Compile Include="FrameBlock.cs" />
+    <Compile Include="GroupTool.cs" />
+    <Compile Include="HatchTool.cs" />
+    <Compile Include="JigUtils.cs" />
+    <Compile Include="LayerTool.cs" />
+    <Compile Include="LayoutTool.cs" />
+    <Compile Include="LineJig.cs" />
+    <Compile Include="LineTool.cs" />
+    <Compile Include="LineTypeTool.cs" />
+    <Compile Include="LispCommandTool.cs" />
+    <Compile Include="MenuTool.cs" />
+    <Compile Include="MLeaderTool.cs" />
+    <Compile Include="ObjectTool.cs" />
+    <Compile Include="PointTool.cs" />
+    <Compile Include="PolylineDrawJig.cs" />
+    <Compile Include="PolylineJig.cs" />
+    <Compile Include="PolylineTool.cs" />
+    <Compile Include="ProcessDatabase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RasterImageTool.cs" />
+    <Compile Include="SelectionTool.cs" />
+    <Compile Include="SelectionSetTool.cs" />
+    <Compile Include="MTextTool.cs" />
+    <Compile Include="SpaceTool.cs" />
+    <Compile Include="TableTool.cs" />
+    <Compile Include="Version.cs" />
+    <Compile Include="ViewPortTool.cs" />
+    <Compile Include="ViewTool.cs" />
+    <Compile Include="XDataTool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZWCAD.BaseTools.extension\ZWCAD.BaseTools.Extension.csproj">
+      <Project>{cd4461f8-a417-4bb2-8965-4f64e70cd210}</Project>
+      <Name>ZWCAD.BaseTools.Extension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mrf.CSharp.BaseTools.Extension\Mrf.CSharp.BaseTools.Extension.csproj">
+      <Project>{533cdcd4-2c1f-49ae-ae85-f9f3f8ed0366}</Project>
+      <Name>Mrf.CSharp.BaseTools.Extension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mrf.CSharp.BaseTools\Mrf.CSharp.BaseTools.csproj">
+      <Project>{926a2dea-feee-4ecf-ab4f-6e43a7797b47}</Project>
+      <Name>Mrf.CSharp.BaseTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

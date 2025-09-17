@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D4A8B82-4AC9-4C28-8B62-54DDCDA06E02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZWCAD</RootNamespace>
+    <AssemblyName>ZWCAD</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Prism">
+      <HintPath>..\node_modules\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="ZwDatabaseMgd">
+      <HintPath>..\CADDLLs\ZWCAD2023\ZwDatabaseMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ZwManaged">
+      <HintPath>..\CADDLLs\ZWCAD2023\ZwManaged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Publish\Commands.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShipBracket\ViewModels\BracketViewModel.cs" />
+    <Compile Include="ShipBracket\ViewModels\BracketViewModel.Properties.cs" />
+    <Compile Include="ShipBracket\Views\BracketView.xaml.cs">
+      <DependentUpon>BracketView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ShipBracket\Views\BracketView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ShipBracket\Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mrf.CSharp.BaseTools.Extension\Mrf.CSharp.BaseTools.Extension.csproj">
+      <Project>{533cdcd4-2c1f-49ae-ae85-f9f3f8ed0366}</Project>
+      <Name>Mrf.CSharp.BaseTools.Extension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZWCAD.BaseTools.extension\ZWCAD.BaseTools.extension.csproj">
+      <Project>{0b355752-deab-4106-a2f3-8649adb172d7}</Project>
+      <Name>ZWCAD.BaseTools.extension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZWCAD.BaseTools\ZWCAD.BaseTools.csproj">
+      <Project>{56d74ab7-72c7-44de-9d4d-e1ad4edae2a5}</Project>
+      <Name>ZWCAD.BaseTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
