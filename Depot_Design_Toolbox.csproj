@@ -65,10 +65,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.AssemblyAttributes.cs" />
+    <Compile Include="open_class\layer\LayerTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="cuix\834.cuix" />
+    <None Include="cuix\tools.cuix" />
     <None Include="design\2.车辆基地总图软件2.0需求书.docx" />
     <None Include="design\车辆基地_需求规格说明书 V1.0.docx" />
     <None Include="LICENSE" />
@@ -82,6 +83,7 @@
     <None Include="documents\ZWCAD_dotNET_Guide_chs_2025.chm" />
     <None Include="documents\ZWCAD_dotNET_Migration_Manual_chs_2025.chm" />
     <None Include="documents\ZWCAD_ZRX_Mgd_enu_2025.chm" />
+    <None Include="tools.cuix" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
